@@ -46,6 +46,7 @@ class Server:
         return self.__dataset[start:end]
 
     def get_hyper(self, page: int = 1, page_size: int = 10):
+        """Hypermedia pagination """
         data = self.get_page(page, page_size)
         size_data_set = len(self.__dataset) if self.__dataset else 0
         total_pages = math.ceil(size_data_set / page_size)
