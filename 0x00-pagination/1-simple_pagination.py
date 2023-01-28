@@ -22,7 +22,8 @@ class Server:
 
         return self.__dataset
 
-    def index_range(self, page: int, page_size: int) -> Tuple[int, int]:
+    @staticmethod
+    def index_range(page: int, page_size: int) -> Tuple[int, int]:
         """
         index_range
         """
@@ -31,6 +32,7 @@ class Server:
         return start, end
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """Get pages"""
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
         self.dataset()
